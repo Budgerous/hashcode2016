@@ -1,5 +1,5 @@
-import warehouse
-import order
+from warehouse import Warehouse
+from order import Order
 
 '''
 example input file:
@@ -32,8 +32,7 @@ max_payload = 0
 num_product_types = 0
 product_types_weights = 0
 num_warehouses = 0
-warehouse_stocks = 0
-warehouse_locations = 0
+warehouses = 0
 num_orders = 0
 orders = 0
 
