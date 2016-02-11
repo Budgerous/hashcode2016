@@ -1,28 +1,37 @@
-
 import input
 
+
+possible_orders = []
+
+
+def distance(a, b):
+    return math.sqrt(math.pow(a[0] - b[0], 2) + math.pow(a[1] - b[1],2))
+
+#list all warehouses by distance from order destination k
+def best_warehouses(o):
+    return []
+
+#does this warehouse have the required items for this order?
+def is_possible(o, w):
+    return True
+
+#sort orders by possible and impossible
+def sort_orders():
+    for o in orders:
+        l = best_warehouses(o)
+
+        for w in l:
+            if(is_possible(o, w)):
+
+                possible_orders.append()
+                orders.remove(o)
+
+
 def main():
-    """
-    # parse command line options
-    try:
-        opts, args = getopt.getopt(sys.argv[1:], "h", ["help"])
-    except getopt.error, msg:
-        print msg
-        print "for help use --help"
-        sys.exit(2)
-    # process options
-    for o, a in opts:
-        if o in ("-h", "--help"):
-            print __doc__
-            sys.exit(0)
-    # process arguments
-    for arg in args:
-        process(arg) # process() is defined elsewhere
-    """
-
     file_path = "input.txt"
-
     input.parse_input_file(file_path)
+    
+
 
 if __name__ == "__main__":
     main()
