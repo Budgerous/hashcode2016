@@ -21,10 +21,33 @@ example input file:
 2
 '''
 
+num_rows = 0
+num_columns = 0
+num_drones = 0
+num_turns = 0
+max_payload = 0
+num_product_types = 0
+product_types_weights = 0
+num_warehouses = 0
+warehouse_stocks = 0
+warehouse_locations = 0
+num_orders = 0
+orders = 0
+
 
 def parse_input_file(file_path):
-    global num_rows, num_columns, num_drones, num_turns, max_payload, num_product_types, product_types_weights
-    global num_warehouses, warehouse_stocks, warehouse_locations, num_orders, orders
+    global num_rows
+    global num_columns
+    global num_drones
+    global num_turns
+    global max_payload
+    global num_product_types
+    global product_types_weights
+    global num_warehouses
+    global warehouse_stocks
+    global warehouse_locations
+    global num_orders
+    global orders
 
     f = open(file_path, 'r')
 

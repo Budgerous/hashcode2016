@@ -1,6 +1,7 @@
 import math
 import parse
 
+#parse.parse_input_file("input.txt")
 
 class Drone:
     'they fly'
@@ -43,6 +44,6 @@ class Drone:
         return (self.payload + (amount * parse.product_types_weights[type])) <= parse.max_payload
 
 
-a = Drone(0, 0)
-a.load(5, 5, 1, 5)
-print(a.getAmountOfType(1))
+#a = Drone(0, 0)
+#a.load(5, 5, 1, 5)
+#print(a.getAmountOfType(1))
