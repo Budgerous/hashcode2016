@@ -1,17 +1,17 @@
 import math
+import parse
 
 class Drone:
     'they fly'
-    max_load = 0
     x = 0
     y = 0
     quantity = []
+    payload = 0
 
-    def __init__(self, x, y, max_load, n_types):
+    def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.max_load = max_load
-        self.quantity = [0 for x in range(n_types)]
+        self.quantity = [0 for x in range(parse.num_product_types)]
 
     def move(self, newX, newY):
         self.x = newX
@@ -23,13 +23,21 @@ class Drone:
     def getAmountOfType(self, type):
         return self.quantity[type]
 
-    def load(self, type, amount):
+    def load(self, x, y, type, amount):
+        self.move(x, y)
         self.quantity[type] += amount
+        self.payload += amount*parse.product_types_weights[type]
 
     def deliver(self, x, y, type, amount):
         self.move(x, y)
         self.quantity[type] -= amount
+        self.payload -= amount*parse.product_types_weights[type]
 
     def unload(self, x, y, type, amount):
         self.move(x, y)
         self.quantity[type] -= amount
+        self.payload -= amount*parse.product_types_weights[type]
+
+a = Drone(0,0)
+a.load(5,5,1,5)
+print(a.getAmountOfType(1))
