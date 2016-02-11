@@ -1,14 +1,15 @@
-import input
-
+import parse
 
 possible_orders = []
+position = [0, 0]
 
-
-def distance(a, b):
-    return math.sqrt(math.pow(a[0] - b[0], 2) + math.pow(a[1] - b[1],2))
+def distance(self):
+    target = self
+    return math.sqrt(math.pow(position[0] - target[0], 2) + math.pow(position[1] - target[1], 2))
 
 #list all warehouses by distance from order destination k
 def best_warehouses(o):
+    l = sort(warehouse)
     return []
 
 #does this warehouse have the required items for this order?
@@ -30,8 +31,6 @@ def sort_orders():
 def main():
     file_path = "input.txt"
     input.parse_input_file(file_path)
-    
-
 
 if __name__ == "__main__":
     main()
