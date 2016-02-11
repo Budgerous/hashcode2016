@@ -1,3 +1,6 @@
+import warehouse
+import order
+
 '''
 example input file:
 -------------------
@@ -15,7 +18,7 @@ example input file:
 2 0
 3 3
 3
-0 0 0
+1 0
 5 6
 1
 2
@@ -71,19 +74,16 @@ def parse_input_file(file_path):
     num_warehouses = int(lines[3])
     # print(num_warehouses, "# num_warehouses")
 
-    warehouse_stocks = ['stock of items' for i in range(num_warehouses)]
-    warehouse_locations = ['location' for i in range(num_warehouses)]
+    warehouses = []
 
     warehouse_lines = lines[4:4 + (num_warehouses * 2)]
 
     j = 0
     for i in range(num_warehouses):
-        warehouse_locations[i] = [int(x) for x in warehouse_lines[j].strip().split()]
-        warehouse_stocks[i] = [int(x) for x in warehouse_lines[j + 1].strip().split()]
+        location = [int(x) for x in warehouse_lines[j].strip().split()]
+        stocks = [int(x) for x in warehouse_lines[j + 1].strip().split()]
+        warehouses.append(Warehouse(i, location, stocks))
         j += 2
-
-        # print(warehouse_locations[i], "# warehouse_location ", i )
-        # print(warehouse_stocks[i], "# warehouse_stock ", i )
 
     # orders
 
@@ -96,8 +96,10 @@ def parse_input_file(file_path):
 
     k = 0
     for i in range(num_orders):
-        for j in range(3):
-            orders[i][j] = [int(x) for x in order_lines[k + j].strip().split()]
+        destination = [int(x) for x in order_lines[k + 0].strip().split()]
+        product_amount = [int(x) for x in order_lines[k + 1].strip().split()]
+        product_type = [int(x) for x in order_lines[k + 2].strip().split()]
+        orders.append(Order(destination[0], destination[1], product_type, product_amount))
         k += 3
 
         # print(orders[i], "# order ", i )
