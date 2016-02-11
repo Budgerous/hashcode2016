@@ -45,8 +45,8 @@ print(product_types_weights, "# product_types_weights")
 num_warehouses = int(lines[3])
 print(num_warehouses, "# num_warehouses")
 
-warehouse_stocks = [ [] for i in range(num_warehouses)]
-warehouse_locations = [ [] for i in range(num_warehouses)]
+warehouse_stocks = [ 'stock of items' for i in range(num_warehouses)]
+warehouse_locations = [ 'location' for i in range(num_warehouses)]
 
 warehouse_lines = lines[4:4 + (num_warehouses * 2)]
 
@@ -65,12 +65,16 @@ for i in range(num_warehouses):
 # orders
 
 num_orders_line = 4 + (num_warehouses * 2)
-num_orders = int(lines[num_orders_line].strip().split())
+num_orders = int(lines[num_orders_line].strip())
 print(num_orders, "# num_orders")
 
 order_lines = lines[num_orders_line + 1: num_orders_line + 1 + (num_orders * 3)]
-orders = [ ['destination', 'volume', ''] for i in range(num_orders) ]
+orders = [ ['destination', 'volume', 'product types'] for i in range(num_orders) ]
 
 k = 0
-for i in range(num_orders)
-    orders[i]
+for i in range(num_orders):
+    for j in range(3):
+        orders[i][j] = [int(x) for x in order_lines[k + j].strip().split()]
+    k += 3
+
+    print(orders[i], "# order ", i )
