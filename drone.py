@@ -1,6 +1,7 @@
 import math
 import parse
 
+
 class Drone:
     'they fly'
     x = 0
@@ -18,7 +19,7 @@ class Drone:
         self.y = newY
 
     def getCost(self, newX, newY):
-        return math.sqrt(math.pow(self.x - newX, 2) + math.pow(self.y - newY,2))
+        return math.sqrt(math.pow(self.x - newX, 2) + math.pow(self.y - newY, 2))
 
     def getAmountOfType(self, type):
         return self.quantity[type]
@@ -26,18 +27,22 @@ class Drone:
     def load(self, x, y, type, amount):
         self.move(x, y)
         self.quantity[type] += amount
-        self.payload += amount*parse.product_types_weights[type]
+        self.payload += amount * parse.product_types_weights[type]
 
     def deliver(self, x, y, type, amount):
         self.move(x, y)
         self.quantity[type] -= amount
-        self.payload -= amount*parse.product_types_weights[type]
+        self.payload -= amount * parse.product_types_weights[type]
 
     def unload(self, x, y, type, amount):
         self.move(x, y)
         self.quantity[type] -= amount
-        self.payload -= amount*parse.product_types_weights[type]
+        self.payload -= amount * parse.product_types_weights[type]
 
-a = Drone(0,0)
-a.load(5,5,1,5)
+    def can_load(self, type, amount):
+        return (self.payload + (amount * parse.product_types_weights[type])) <= parse.max_payload
+
+
+a = Drone(0, 0)
+a.load(5, 5, 1, 5)
 print(a.getAmountOfType(1))

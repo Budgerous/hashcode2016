@@ -22,7 +22,7 @@ def main():
 
     file_path = "input.txt"
 
-    num_rows, num_columns, num_drones, num_turns, max_payload, num_product_types, product_types_weights, num_warehouses, warehouse_stocks, warehouse_locations, num_orders, orders = input.parse_input_file(file_path)
+    input.parse_input_file(file_path)
 
 if __name__ == "__main__":
     main()
