@@ -1,5 +1,5 @@
 
-import input
+import parse
 
 def main():
     """
@@ -22,7 +22,7 @@ def main():
 
     file_path = "input.txt"
 
-    input.parse_input_file(file_path)
+    parse.parse_input_file(file_path)
 
 if __name__ == "__main__":
     main()
