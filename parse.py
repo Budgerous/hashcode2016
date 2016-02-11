@@ -32,9 +32,9 @@ max_payload = 0
 num_product_types = 0
 product_types_weights = 0
 num_warehouses = 0
-warehouses = 0
+warehouses = []
 num_orders = 0
-orders = 0
+orders = []
 
 
 def parse_input_file(file_path):
@@ -46,8 +46,7 @@ def parse_input_file(file_path):
     global num_product_types
     global product_types_weights
     global num_warehouses
-    global warehouse_stocks
-    global warehouse_locations
+    global warehouses
     global num_orders
     global orders
 

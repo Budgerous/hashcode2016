@@ -1,4 +1,4 @@
-import parse
+from parse import *
 
 possible_orders = []
 position = [0, 0]
@@ -32,7 +32,7 @@ def sort_orders():
 
 def main():
     file_path = "input.txt"
-    input.parse_input_file(file_path)
+    parse_input_file(file_path)
 
     sort_orders()
 
