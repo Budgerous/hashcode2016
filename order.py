@@ -20,10 +20,10 @@ class Order:
     def getProductAmount(self):
         return self.product_amount
 
-    def getDestinationX(self)
+    def getDestinationX(self):
         return self.destinationX
 
-    def getDestinationY(self)
+    def getDestinationY(self):
         return self.destinationY
         
         

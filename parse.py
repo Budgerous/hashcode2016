@@ -92,7 +92,7 @@ def parse_input_file(file_path):
     # print(num_orders, "# num_orders")
 
     order_lines = lines[num_orders_line + 1: num_orders_line + 1 + (num_orders * 3)]
-    orders = [['destination', 'volume', 'product types'] for i in range(num_orders)]
+    orders = []
 
     k = 0
     for i in range(num_orders):
