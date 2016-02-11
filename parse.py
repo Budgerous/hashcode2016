@@ -1,4 +1,6 @@
 import warehouse
+import order
+
 '''
 example input file:
 -------------------
@@ -94,8 +96,10 @@ def parse_input_file(file_path):
 
     k = 0
     for i in range(num_orders):
-        for j in range(3):
-            orders[i][j] = [int(x) for x in order_lines[k + j].strip().split()]
+        destination = [int(x) for x in order_lines[k + 0].strip().split()]
+        product_amount = [int(x) for x in order_lines[k + 1].strip().split()]
+        product_type = [int(x) for x in order_lines[k + 2].strip().split()]
+        orders.append(Order(destination[0], destination[1], product_type, product_amount))
         k += 3
 
         # print(orders[i], "# order ", i )
