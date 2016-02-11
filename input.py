@@ -75,3 +75,6 @@ def parse_input_file(file_path):
         k += 3
 
         # print(orders[i], "# order ", i )
+
+
+    return num_rows, num_columns, num_drones, num_turns, max_payload, num_product_types, product_types_weights, num_warehouses, warehouse_stocks, warehouse_locations, num_orders, orders
