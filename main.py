@@ -9,8 +9,9 @@ def distance(self):
 
 #list all warehouses by distance from order destination k
 def best_warehouses(o):
-    l = sort(warehouse)
-    return []
+    position = o.position
+    return sorted(warehouses, distance)
+    
 
 #does this warehouse have the required items for this order?
 def is_possible(o, w):
@@ -20,17 +21,20 @@ def is_possible(o, w):
 def sort_orders():
     for o in orders:
         l = best_warehouses(o)
+        print(l);
 
-        for w in l:
-            if(is_possible(o, w)):
+        # for w in l:
+        #     if(is_possible(o, w)):
 
-                possible_orders.append()
-                orders.remove(o)
+        #         possible_orders.append()
+        #         orders.remove(o)
 
 
 def main():
     file_path = "input.txt"
     input.parse_input_file(file_path)
+
+    sort_orders()
 
 if __name__ == "__main__":
     main()
